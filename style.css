@@ -8,6 +8,10 @@ a {
     color: white;
 }
 
+p {
+    font-family: futura-pt, sans-serif;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -30,12 +34,15 @@ a {
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.03);
     flex: 1;
+    position : relative;
 }
 
 .menu-barre a {
   color: grey;
   text-decoration: none;
   font-size: 0.95rem;
+  transition: ease 0.5s;
+  font-family: futura-pt, sans-serif;
 }
 
 .menu-barre a.connexion {
@@ -50,23 +57,116 @@ a {
   text-decoration: none;
 }
 
-.swiper {
+.menu-barre a:hover {
+    color: #eee;
+    transform: scale(1.05);
+    transition: ease 0.5s;
+}
+
+.page-name {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 0.8rem 3rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255,255, 0.25);
+    margin: 1rem auto;
+    background: transparent;
+    width: fit-content;
+    margin: 1.5rem auto;
+    font-family: futura-pt, sans-serif;
+}
+
+.horizontal-separateur {
+    border: none;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.15);
+    width: 85%;
+    max-width: 1500px;
+    margin: 3rem auto;
+}
+
+.main-carrousel {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+}
+
+.main-carrousel .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+.infos {
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+    gap: 30px;
+}
+
+.info-img {
+    border-radius: 40px;
+}
+
+.info-title-box {
+    border: 1px solid rgba(255, 255,255, 0.25);
+    border-radius: 30px;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: futura-pt, sans-serif;
+}
+
+.info-txt {
+    font-size: 1.2rem;
+    width: 50%;
+}
+
+.explications-main-box {
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    max-width: 1600px;
+    text-align: left;
+    gap: 30px;
+    margin: 0 auto;
+}
+
+.explications-txt-box {
+    max-width: 800px;
+}
+
+.explications-title {
+    font-family: good-times, sans-serif;
+}
+
+.explications-txt {
+    margin: 1.8rem;
+}
+
+/* Page quizz : Création des cartes quizz en swiper */
+.quizz-carrousel {
     width: 380px;
     height: 480px;
     margin: 40px auto;
 }
 
-.swiper-slide {
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    box-sizing: border-box;
-    color: white;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+.quizz-carrousel .swiper-slide {
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .carte-numero {
@@ -116,6 +216,7 @@ a {
     color: rgb(255, 80, 80);
 }
 
+/* Création du footer */
 .footer {
     display: flex;
     align-items: center;
@@ -154,4 +255,37 @@ a {
     width: 1px;
     height: 40px;
     background: rgba(255, 255, 255, 0.2);
+}
+
+/* Page promotion*/
+
+.item {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.projet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.projet:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
 }
