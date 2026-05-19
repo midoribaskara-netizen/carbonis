@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+}
+
 body {
     background : #f1f1f1;
     min-height: 100vh;
@@ -22,7 +26,11 @@ p {
 .logo {
   width: 100px;
   height: auto;
-  flex-shrink: 0; /*Empeche le logo de rétrécir*/
+  flex-shrink: 0;
+}
+
+.menu-checkbox, .menu-icone {
+    display: none;
 }
 
 .menu-barre {
@@ -31,7 +39,7 @@ p {
     gap: 3rem;
     padding: 0.5rem 0.5rem 0.5rem 2rem;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 999px;
+    border-radius: 30px;
     background: rgba(255, 255, 255, 0.03);
     flex: 1;
     position : relative;
@@ -41,6 +49,7 @@ p {
   color: grey;
   text-decoration: none;
   font-size: 0.95rem;
+  border-radius: 30px;
   transition: ease 0.5s;
   font-family: futura-pt, sans-serif;
 }
@@ -50,7 +59,6 @@ p {
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.25);
   padding: 0.6rem 1.8rem;
-  border-radius: 999px;
   cursor:pointer;
   font-size: 0.9rem;
   margin-left: auto;
@@ -66,15 +74,9 @@ p {
 .page-name {
     color: white;
     font-size: 1.8rem;
-    font-weight: bold;
-    padding: 0.8rem 3rem;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255,255, 0.25);
-    margin: 1rem auto;
-    background: transparent;
-    width: fit-content;
-    margin: 1.5rem auto;
-    font-family: futura-pt, sans-serif;
+    font-family: good-times, sans-serif;
+    text-align: center;
+    margin: 30px;
 }
 
 .horizontal-separateur {
@@ -88,8 +90,8 @@ p {
 
 .main-carrousel {
   width: 100%;
-  max-width: 800px;
-  height: 400px;
+  max-width: 1400px;
+  height: 70vh;
 }
 
 .main-carrousel .swiper-slide img {
@@ -97,6 +99,13 @@ p {
   height: 100%;
   border-radius: 30px;
   object-fit: cover;
+}
+
+.slogan {
+    color: #eee;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .infos {
@@ -288,4 +297,103 @@ p {
 .projet:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: scale(1.02);
+}
+
+
+/* Format téléphone */
+@media screen and (max-width: 768px) {
+    .header {
+        position: relative;
+        justify-content: space-between;
+    }
+
+    .menu-icone {
+        display: block;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 100;
+        transition: 0.5s ease;
+    }
+
+    .menu-icone:hover {
+        transform: scale(1.1);
+        transition: 0.5s ease;
+    }
+
+    .menu-barre {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+ 
+        position: absolute;
+        top: 100%;
+        right: 2rem;
+        width: 250px;
+        padding: 2rem;
+        
+        border-radius: 16px;
+        background: rgba(1, 4, 9, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(10px);
+        
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 99;
+    }
+
+    .menu-barre a.connexion {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .menu-checkbox:checked ~ .menu-barre {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .main-carrousel {
+        width: 90%;
+        height: 300px;
+    }
+
+    .slogan {
+        max-width: 300px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+
+    .infos {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-txt {
+        width: 70%;
+    }
+
+    .explications-main-box {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        border: none;
+    }
+
+    .separateur {
+        display: none;
+    }
 }

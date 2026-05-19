@@ -1,11 +1,11 @@
 const questions = [
   {
-    question: "Quelle est la capitale de la France ?",
-    propositions : ["Londres", "Berlin", "Paris", "Madrid"],
-    bonne: 2
+    question: "Quelle est la principale problématique abordée par le projet ?",
+    propositions : ["Le manque d’électricité dans les villes", "L’excès de CO₂ dans l’atmosphère", "Le manque d’eau potable", "La disparition des forêts tropicales"],
+    bonne: 1
   },
   {
-    question: "Quelle planète est la plus proche du soleil ?",
+    question: "Quel est l’objectif principal du projet Carbonis ?",
     propositions : ["Vénus","Mars","Terre","Mercure"],
     bonne: 3
   },
@@ -86,8 +86,11 @@ if (quizzSwiperEl) {
 if (document.querySelector('.main-carrousel')) {
     const swiperPhotos = new Swiper('.main-carrousel', {
       loop: true,
+
+      speed:1000,
+      
       autoplay: {
-        delay: 3000,
+        delay: 4000,
       },
     });
 }
