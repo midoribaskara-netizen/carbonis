@@ -13,6 +13,7 @@ a {
 }
 
 p {
+    color: #eee;
     font-family: futura-pt, sans-serif;
 }
 
@@ -503,4 +504,34 @@ p {
 
 .incorrect {
     background: #ff9393;
+}
+
+.explications-img {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.info-img {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.explications-txt {
+    color: white;
+}
+
+.market {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: Arial, sans-serif; 
+}
+
+.promo {
+    width: 500px;
+    height: 250px;
+    object-fit: cover;
+    align-items: center;
 }
