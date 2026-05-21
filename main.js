@@ -11,6 +11,8 @@ if (document.querySelector('.main-carrousel')) {
     });
 }
 
+// --- Gestion du questionnaires du quizz ---
+
 const questions = [
     {question: "Quelle est la principale problématique abordée par le projet ?",
         answers: [
@@ -66,9 +68,19 @@ const questions = [
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
+const progressBar = document.querySelector(".progress");
+const questionCount = document.getElementById("question-count");
 
 let currentQuestionIndex = 0;
 let score = 0;
+
+function updateProgressBar() {
+    const progress = ((currentQuestionIndex) / questions.length) * 100;
+
+    progressBar.style.width = progress + "%";
+
+    questionCount.innerHTML = `${currentQuestionIndex + 1} / ${questions.length}`;
+}
 
 
 function startQuiz() {
@@ -80,6 +92,9 @@ function startQuiz() {
 
 function showQuestion() {
     resetState();
+
+    updateProgressBar();
+
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + ". " + currentQuestion.
@@ -127,6 +142,9 @@ function showScore() {
     questionElement.innerHTML = `Ton score ${score} sur ${questions.length}!`;
     nextButton.innerHTML = "rejouer";
     nextButton.style.display = "block";
+    progressBar.style.width = "100%";
+
+    questionCount.innerHTML="";
 }
 
 
@@ -148,4 +166,6 @@ nextButton.addEventListener("click", ()=> {
 })
 
 startQuiz();
+
+
 
