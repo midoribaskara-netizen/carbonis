@@ -168,4 +168,3 @@ nextButton.addEventListener("click", ()=> {
 startQuiz();
 
 
-
