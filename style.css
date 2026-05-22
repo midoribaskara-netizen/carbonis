@@ -645,3 +645,58 @@ h2, h3 {
         font-size: 1.6rem;
     }
 }
+
+.com {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.com .texte {
+    flex: 1;
+}
+
+.com-press img {
+    width: 350px;
+    border-radius: 20px;
+}
+
+.affiche {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1600px;
+    margin: 40px auto;
+    padding: 0 2rem;
+}
+
+.aff{
+    max-width:380px;
+    border-radius:32px;
+    border:1px solid rgba(255,255,255,0.15);
+    background:rgba(255,255,255,0.03);
+    padding:1.5rem;
+}
+
+.aff h3{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.aff-img{
+    width:100%;
+    border-radius:20px;
+    display:block;
+}
+
+.logo-noir {
+    background: white;
+}
+
+.logo-blanc {
+    background: black;
+}
+
+.logo-bleu {
+    background: white;
+}
